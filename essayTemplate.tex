@@ -1,0 +1,135 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{ctex} % 支持中文
+\usepackage{geometry} % 设定页面边距
+\usepackage{graphicx} % 插入图片
+\usepackage{amsmath, amssymb} % 数学符号与公式
+\usepackage{booktabs} % 美化表格
+\usepackage{longtable} % 支持长表格
+\usepackage{enumitem} % 调整列表格式
+\usepackage{hyperref} % 超链接
+\usepackage{titlesec} % 自定义标题格式
+\usepackage{fancyhdr} % 页眉页脚
+\usepackage{setspace} % 行距控制
+\usepackage{caption} % 控制标题格式
+\usepackage[numbers]{natbib} % 参考文献格式
+
+% 设定页面边距
+\geometry{top=2.54cm, bottom=2.54cm, left=3.17cm, right=3.17cm}
+
+% 设定段落格式
+\setlength{\parindent}{2em} % 首行缩进 2 个字符
+\setlength{\parskip}{0em} % 段间距为 0
+
+% 设定行距
+\renewcommand{\baselinestretch}{1.5} % 1.5 倍行距
+
+% 标题格式
+\titleformat{\section}{\heiti\zihao{3}}{\thesection}{1em}{}
+\titleformat{\subsection}{\kaishu\zihao{-4}}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\songti\zihao{-4}\bfseries}{\thesubsubsection}{1em}{}
+
+% 页眉页脚
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{\songti\zihao{-4} 2025 年（第十一届）全国大学生统计建模大赛}
+\fancyfoot[C]{\thepage}
+
+% 设置图表标题格式
+\captionsetup{font={small, bf}, labelsep=space}
+
+\begin{document}
+
+% 封面
+\begin{titlepage}
+    \begin{center}
+        {\heiti\zihao{2} 2025 年（第十一届）全国大学生统计建模大赛} \\
+        \vspace{1cm}
+        {\heiti\zihao{2} 参 赛 作 品} \\
+        \vspace{2cm}
+        {\heiti\zihao{3} 论文题目：XX 相对贫困治理成效的统计测度研究} \\
+        \vspace{2cm}
+        {\songti\zihao{4} 参赛学校：XXXXXX 大学} \\
+        {\songti\zihao{4} 参赛队员：XXX、XXX、XXX} \\
+        {\songti\zihao{4} 指导老师：XXX、XXX} \\
+        \vfill
+        {\songti\zihao{4} 作品编号：TJJM20250000000} \\
+        \vspace{1cm}
+    \end{center}
+\end{titlepage}
+
+% 摘要
+\begin{center}
+    {\heiti\zihao{3} 摘要}
+\end{center}
+\noindent
+中国目前已彻底消除了绝对贫困，减贫事业将进入治理相对贫困的新阶段，但学界尚缺乏相应的统计指数来测度相对贫困的治理成效。为此，本文……
+\vspace{1em}
+
+\noindent
+\textbf{关键词}：相对贫困；持续多维脱贫指数；……
+
+\newpage
+% 目录
+\tableofcontents
+\newpage
+
+% 正文
+\section{持续多维相对贫困脱/返贫指数的测算思路}
+长期以来，世界各国都在为消除极端贫困而努力，并取得了一定的成绩。在全球范围内，极端贫困发生率迅速下降。据世界银行估计，极端贫困人口的比例从 1990 年的 36.2\% 下降到 2017 年的 9.3\%。极端贫困的问题……
+
+\subsection{单维相对贫困的识别}
+相对贫困发生率和相对贫困减贫成效都是一个整体的概念……个体福利用 $d$ 个指标来表示其水平指数，对某一区县，$x_{ij}^{(t)}$ 表示 $t$ 时期个体 $i$ 在福利指标 $j$ 上的取值……
+
+\subsubsection{单维相对贫困脱贫成效/返贫现象的识别}
+利用 Markov 链模型思路……其代表性元素 $p_{ij}^{(t)}$ 的计算过程如下：
+\begin{equation}
+    P^{(t)} =
+    \begin{bmatrix}
+        p_{00}^{(t)} & p_{01}^{(t)} \\
+        p_{10}^{(t)} & p_{11}^{(t)}
+    \end{bmatrix}
+\end{equation}
+
+\newpage
+% 表格示例
+\section{表格示例}
+\begin{table}[htbp]
+    \centering
+    \caption{多维减贫成效测度的相对贫困维度指标}
+    \begin{tabular}{llcc}
+        \toprule
+        指标层 & 指标解释与赋值 & 临界值 & 权重 \\
+        \midrule
+        人均纯收入 & 家庭人均年纯收入（2010 年不变价） & $0.4 \times$ 中位数 & 1/8 \\
+        身体质量指数（BMI） & BMI 指数（体重 kg / 身高 m²） & $0.5 \times$ （中位数 $+18.5$） & 1/8 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+% 参考文献
+\newpage
+\begin{thebibliography}{99}
+\bibitem{jiang2017} 蒋南平, 郑万军. 中国农民工多维返贫测度问题[J]. 中国农村经济, 2017(6):58-69.
+\bibitem{wang2020} 汪三贵, 刘明月. 从绝对贫困到相对贫困: 理论关系、战略转变与政策重点[J]. 华南师范大学学报 (社会科学版), 2020(06):18-29+189.
+\bibitem{airio2005} Airio I, Moisio P, Niemelä M. Intergenerational Transmission of Poverty in Finland in the 1990s[J]. European Journal of Social Security, 2005, 7(3):253-269.
+\end{thebibliography}
+
+% 附录
+\newpage
+\section*{附录}
+\begin{table}[htbp]
+    \centering
+    \caption{简称与全称对应表}
+    \begin{tabular}{ll}
+        \toprule
+        全称 & 简称 \\
+        \midrule
+        持续多维相对贫困脱贫指数 & $\alpha$ 相对脱贫指数 \\
+        持续多维相对贫困脱贫成效 & $\alpha$ 相对脱贫成效 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\section*{致谢}
+论文的完成离不开 XXX 老师的指导……
+\end{document}
